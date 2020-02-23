@@ -1,0 +1,33 @@
+﻿
+
+.form-area{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 800px;
+    height: 650px;
+    background: rgba(0,0,0,0.5);
+    padding: 40px;
+}
+
+img{
+    height: 60%;
+    width: 100%;
+}
+
+form,.calender-area{
+    color:white;
+}
+
+.calender-area {
+    position: absolute;
+    top: 8%;
+    right: 5%;
+    transform: translate(-50%,-50%);
+   /*width: 80px;*/
+    height: 80px;
+    padding: 40px;
+}
+
+

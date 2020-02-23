@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Quality Inn (Cincinnati airport) parking booking portal</title>
+    <link rel="stylesheet" href="Stylesheet.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>  <!--latest jquery-->
+
+    <script src="jqueryUI/jquery-ui.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="jqueryUI/jquery-ui.css" />                                                                 <!--JqueryUI-->
+    <link rel="stylesheet" href="jqueryUI/jquery-ui.structure.css" />
+    <link rel="stylesheet" href="jqueryUI/jquery-ui.theme.css" />
+
+    <script src="Multiple-Dates-Picker-for-jQuery-UI-latest/jquery-ui.multidatespicker.js" type="text/javascript"></script>      <!--luca lorreta Multidatepicker-->
+    <link rel="stylesheet" href="Multiple-Dates-Picker-for-jQuery-UI-latest/jquery-ui.multidatespicker.css" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />                 <!--bootstrap-->
+    <!--<link rel="stylesheet" type="text/css" href="jquery.datepick.package-5.1.0/css/jquery.datepick.css">
+    <script type="text/javascript" src="jquery.datepick.package-5.1.0/js/jquery.plugin.js"></script>                          // keith wood datepicker lib
+    <script type="text/javascript" src="jquery.datepick.package-5.1.0/js/jquery.datepick.js"></script>-->
+
+</head>
+<body>
+    <img src="Images/QualityInn.webp" />
+    <div class="form-area">
+        <h3 style="color: white;">Booking Details</h3>
+        <form action="">
+
+            <div class="calender-area">
+                <h3 style="color: white;">Select Dates</h3>
+                <input type="text" name="" id="dateinput" placeholder="Select Date" autocomplete="off" required/>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <button type="button" class="btn btn-info" onclick="onClick('#dateinput')">Calculate price</button>
+
+                <div id="result"></div>
+
+            </div>
+            
+
+            <div>
+                <p>Full Name</p>
+                <input type="text" name="" id="" placeholder="Full Name" required />
+                <p>Email</p>
+                <input type="email" name="" id="" placeholder="email" required />
+                <p>Phone</p>
+                <input type="number" name="" id="" placeholder="phone" required />
+                <p>Number plate</p>
+                <input type="text" name="" id="" placeholder="Number plate" required />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <input type="submit" value="pay" class="btn btn-success btn-lg btn-block" />
+            </div>
+        </form>
+    </div>
+    <script>
+
+        $(document).ready(function () {
+
+            var disabledDates = ["2020-02-21", "2020-02-15"];
+            $('#dateinput').multiDatesPicker({
+
+                beforeShowDay: function (date) {
+                    var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+                    return [disabledDates.indexOf(string) == -1]
+                }
+            });
+        });
+
+        function onClick(elem) {
+            var $this = $(elem);
+            var val = $this.val();
+            if (val == '') {
+                alert('please select a date');
+            } else {
+                var values = $this.val().split(',');
+                var count = 0;
+                for (var a = 0; a < values.length; a++) {
+                    count++;
+                }
+            }
+            document.getElementById("result").innerHTML = "Total price :$" + count * 5;
+        }
+
+    </script>
+</body>
+</html>
