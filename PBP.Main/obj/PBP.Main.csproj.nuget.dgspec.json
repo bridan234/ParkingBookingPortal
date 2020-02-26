@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.Main\\PBP.Main.csproj": {}
+    "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.Main\\PBP.Main.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.BusinessLogic\\PBP.BusinessLogic.csproj": {
+    "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.BusinessLogic\\PBP.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.BusinessLogic\\PBP.BusinessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.BusinessLogic\\PBP.BusinessLogic.csproj",
         "projectName": "PBP.BusinessLogic",
-        "projectPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.BusinessLogic\\PBP.BusinessLogic.csproj",
+        "projectPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.BusinessLogic\\PBP.BusinessLogic.csproj",
         "packagesPath": "C:\\Users\\Bridan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.BusinessLogic\\obj\\",
+        "outputPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bridan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -56,14 +56,14 @@
         }
       }
     },
-    "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.Main\\PBP.Main.csproj": {
+    "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.Main\\PBP.Main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.Main\\PBP.Main.csproj",
+        "projectUniqueName": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.Main\\PBP.Main.csproj",
         "projectName": "PBP.Main",
-        "projectPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.Main\\PBP.Main.csproj",
+        "projectPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.Main\\PBP.Main.csproj",
         "packagesPath": "C:\\Users\\Bridan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.Main\\obj\\",
+        "outputPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.Main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bridan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -79,11 +79,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.BusinessLogic\\PBP.BusinessLogic.csproj": {
-                "projectPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.BusinessLogic\\PBP.BusinessLogic.csproj"
+              "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.BusinessLogic\\PBP.BusinessLogic.csproj": {
+                "projectPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.BusinessLogic\\PBP.BusinessLogic.csproj"
               },
-              "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.UI\\PBP.UI.csproj": {
-                "projectPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.UI\\PBP.UI.csproj"
+              "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.UI\\PBP.UI.csproj": {
+                "projectPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.UI\\PBP.UI.csproj"
               }
             }
           }
@@ -124,14 +124,14 @@
         }
       }
     },
-    "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.UI\\PBP.UI.csproj": {
+    "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.UI\\PBP.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.UI\\PBP.UI.csproj",
+        "projectUniqueName": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.UI\\PBP.UI.csproj",
         "projectName": "PBP.UI",
-        "projectPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.UI\\PBP.UI.csproj",
+        "projectPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.UI\\PBP.UI.csproj",
         "packagesPath": "C:\\Users\\Bridan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.UI\\obj\\",
+        "outputPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.UI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bridan\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.UI\\PBP.UI.csproj",
+      "projectUniqueName": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.UI\\PBP.UI.csproj",
       "projectName": "PBP.UI",
-      "projectPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.UI\\PBP.UI.csproj",
+      "projectPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.UI\\PBP.UI.csproj",
       "packagesPath": "C:\\Users\\Bridan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.UI\\obj\\",
+      "outputPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.UI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Bridan\\AppData\\Roaming\\NuGet\\NuGet.Config",

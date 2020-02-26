@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.DataAccess\\PBP.DataAccess.csproj": {}
+    "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.DataAccess\\PBP.DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.DataAccess\\PBP.DataAccess.csproj": {
+    "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.DataAccess\\PBP.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.DataAccess\\PBP.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.DataAccess\\PBP.DataAccess.csproj",
         "projectName": "PBP.DataAccess",
-        "projectPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.DataAccess\\PBP.DataAccess.csproj",
+        "projectPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.DataAccess\\PBP.DataAccess.csproj",
         "packagesPath": "C:\\Users\\Bridan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bridan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.Pocos\\PBP.Pocos.csproj": {
-                "projectPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.Pocos\\PBP.Pocos.csproj"
+              "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.Pocos\\PBP.Pocos.csproj": {
+                "projectPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.Pocos\\PBP.Pocos.csproj"
               }
             }
           }
@@ -80,14 +80,14 @@
         }
       }
     },
-    "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.Pocos\\PBP.Pocos.csproj": {
+    "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.Pocos\\PBP.Pocos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.Pocos\\PBP.Pocos.csproj",
+        "projectUniqueName": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.Pocos\\PBP.Pocos.csproj",
         "projectName": "PBP.Pocos",
-        "projectPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.Pocos\\PBP.Pocos.csproj",
+        "projectPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.Pocos\\PBP.Pocos.csproj",
         "packagesPath": "C:\\Users\\Bridan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.Pocos\\obj\\",
+        "outputPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.Pocos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bridan\\AppData\\Roaming\\NuGet\\NuGet.Config",
