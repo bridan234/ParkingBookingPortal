@@ -8,23 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\vishwant mamidi\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Bridan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vishwant mamidi\\Desktop\\Dot Net\\ParkingBookingPortal\\ParkingBookingPortal\\PBP.BusinessLogic\\PBP.BusinessLogic.csproj",
+      "projectUniqueName": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.BusinessLogic\\PBP.BusinessLogic.csproj",
       "projectName": "PBP.BusinessLogic",
-      "projectPath": "C:\\Users\\vishwant mamidi\\Desktop\\Dot Net\\ParkingBookingPortal\\ParkingBookingPortal\\PBP.BusinessLogic\\PBP.BusinessLogic.csproj",
-      "packagesPath": "C:\\Users\\vishwant mamidi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vishwant mamidi\\Desktop\\Dot Net\\ParkingBookingPortal\\ParkingBookingPortal\\PBP.BusinessLogic\\obj\\",
+      "projectPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.BusinessLogic\\PBP.BusinessLogic.csproj",
+      "packagesPath": "C:\\Users\\Bridan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.BusinessLogic\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\vishwant mamidi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Bridan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/Stylesheet.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>  <!--latest jquery-->
+
+    <script src="~/jqueryUI/jquery-ui.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="~/jqueryUI/jquery-ui.css" />                                                                 <!--JqueryUI-->
+    <link rel="stylesheet" href="~/jqueryUI/jquery-ui.structure.css" />
+    <link rel="stylesheet" href="~/jqueryUI/jquery-ui.theme.css" />
+
+    <script src="~/Multiple-Dates-Picker-for-jQuery-UI-latest/jquery-ui.multidatespicker.js" type="text/javascript"></script>      <!--luca lorreta Multidatepicker-->
+    <link rel="stylesheet" href="~/Multiple-Dates-Picker-for-jQuery-UI-latest/jquery-ui.multidatespicker.css" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />                 <!--bootstrap-->
+    <!--<link rel="stylesheet" type="text/css" href="jquery.datepick.package-5.1.0/css/jquery.datepick.css">
+    <script type="text/javascript" src="jquery.datepick.package-5.1.0/js/jquery.plugin.js"></script>                          // keith wood datepicker lib
+    <script type="text/javascript" src="jquery.datepick.package-5.1.0/js/jquery.datepick.js"></script>-->
+    </head>
+<body>
+    <header>
+        <div class="text-center">
+            <h1 class="display-4">Welcome</h1>
+            <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            <img src="~/Images/QualityInn.webp" />
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - Parking Lot Reservation System - <a asp-area="" asp-controller="Home" asp-action="Privacy">Vishwant</a>
+        </div>
+    </footer>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

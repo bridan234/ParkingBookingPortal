@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vishwant mamidi\\Desktop\\Dot Net\\ParkingBookingPortal\\ParkingBookingPortal\\PBP.UI\\PBP.UI.csproj": {}
+    "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.UI\\PBP.UI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vishwant mamidi\\Desktop\\Dot Net\\ParkingBookingPortal\\ParkingBookingPortal\\PBP.UI\\PBP.UI.csproj": {
+    "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.UI\\PBP.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vishwant mamidi\\Desktop\\Dot Net\\ParkingBookingPortal\\ParkingBookingPortal\\PBP.UI\\PBP.UI.csproj",
+        "projectUniqueName": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.UI\\PBP.UI.csproj",
         "projectName": "PBP.UI",
-        "projectPath": "C:\\Users\\vishwant mamidi\\Desktop\\Dot Net\\ParkingBookingPortal\\ParkingBookingPortal\\PBP.UI\\PBP.UI.csproj",
-        "packagesPath": "C:\\Users\\vishwant mamidi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vishwant mamidi\\Desktop\\Dot Net\\ParkingBookingPortal\\ParkingBookingPortal\\PBP.UI\\obj\\",
+        "projectPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.UI\\PBP.UI.csproj",
+        "packagesPath": "C:\\Users\\Bridan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bridan\\source\\repos\\newd\\PBP.UI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\vishwant mamidi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bridan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

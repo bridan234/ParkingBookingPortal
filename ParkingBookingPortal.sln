@@ -3,17 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBP.Pocos", "PBP.Pocos\PBP.Pocos.csproj", "{1FD38301-16D2-46E1-ABFE-4E731DBFCA74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PBP.Pocos", "PBP.Pocos\PBP.Pocos.csproj", "{1FD38301-16D2-46E1-ABFE-4E731DBFCA74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBP.DataAccess", "PBP.DataAccess\PBP.DataAccess.csproj", "{FA37B2C8-1BC3-4A9B-81E9-9A452A38EE87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PBP.DataAccess", "PBP.DataAccess\PBP.DataAccess.csproj", "{FA37B2C8-1BC3-4A9B-81E9-9A452A38EE87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBP.EntityFrameworkDataAccess", "PBP.EntityFrameworkDataAccess\PBP.EntityFrameworkDataAccess.csproj", "{4D740C96-A5E9-4E5E-B8EC-F6A3EDF0298C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PBP.BusinessLogic", "PBP.BusinessLogic\PBP.BusinessLogic.csproj", "{20794253-ACDD-41F3-B103-66F19B67B964}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBP.BusinessLogic", "PBP.BusinessLogic\PBP.BusinessLogic.csproj", "{20794253-ACDD-41F3-B103-66F19B67B964}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PBP.Main", "PBP.Main\PBP.Main.csproj", "{B861168F-B515-4DF8-8F9E-111B603D98C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBP.Main", "PBP.Main\PBP.Main.csproj", "{B861168F-B515-4DF8-8F9E-111B603D98C7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBP.UI", "PBP.UI\PBP.UI.csproj", "{11E6F66A-5AF3-4A51-BB97-24A60266BF90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PBP.UI", "PBP.UI\PBP.UI.csproj", "{11E6F66A-5AF3-4A51-BB97-24A60266BF90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{FA37B2C8-1BC3-4A9B-81E9-9A452A38EE87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA37B2C8-1BC3-4A9B-81E9-9A452A38EE87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA37B2C8-1BC3-4A9B-81E9-9A452A38EE87}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D740C96-A5E9-4E5E-B8EC-F6A3EDF0298C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D740C96-A5E9-4E5E-B8EC-F6A3EDF0298C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D740C96-A5E9-4E5E-B8EC-F6A3EDF0298C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D740C96-A5E9-4E5E-B8EC-F6A3EDF0298C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{20794253-ACDD-41F3-B103-66F19B67B964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{20794253-ACDD-41F3-B103-66F19B67B964}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20794253-ACDD-41F3-B103-66F19B67B964}.Release|Any CPU.ActiveCfg = Release|Any CPU
