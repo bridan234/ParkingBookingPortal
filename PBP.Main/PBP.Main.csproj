@@ -76,7 +76,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PBP.BusinessLogic\PBP.BusinessLogic.csproj" />
-    <ProjectReference Include="..\PBP.UI\PBP.UI.csproj" />
   </ItemGroup>
 
 

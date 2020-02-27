@@ -1807,16 +1807,6 @@
         "runtime": {
           "bin/placeholder/PBP.BusinessLogic.dll": {}
         }
-      },
-      "PBP.UI/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "compile": {
-          "bin/placeholder/PBP.UI.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/PBP.UI.dll": {}
-        }
       }
     }
   },
@@ -6084,18 +6074,12 @@
       "type": "project",
       "path": "../PBP.BusinessLogic/PBP.BusinessLogic.csproj",
       "msbuildProject": "../PBP.BusinessLogic/PBP.BusinessLogic.csproj"
-    },
-    "PBP.UI/1.0.0": {
-      "type": "project",
-      "path": "../PBP.UI/PBP.UI.csproj",
-      "msbuildProject": "../PBP.UI/PBP.UI.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.1",
-      "PBP.BusinessLogic >= 1.0.0",
-      "PBP.UI >= 1.0.0"
+      "PBP.BusinessLogic >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6126,9 +6110,6 @@
           "projectReferences": {
             "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.BusinessLogic\\PBP.BusinessLogic.csproj": {
               "projectPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.BusinessLogic\\PBP.BusinessLogic.csproj"
-            },
-            "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.UI\\PBP.UI.csproj": {
-              "projectPath": "C:\\Users\\Bridan\\source\\repos\\ParkingBookingPortal\\PBP.UI\\PBP.UI.csproj"
             }
           }
         }
