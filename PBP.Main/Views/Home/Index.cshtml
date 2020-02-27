@@ -1,7 +1,9 @@
-﻿@{
+﻿@model ICollection<DateTime>
+@{
     ViewData["Title"] = "Quality Inn (Cincinnati airport) parking booking portal";
 }
-<script lang="text/JavaScript" src="~/js/DatePickerScript.js"></script>
+@*<script lang="text/JavaScript" src="~/js/DatePickerScript.js"></script>*@
+
 <div class="form-area">
     <h3 style="color: white;">Booking Details</h3>
     <form action="post">
@@ -22,7 +24,7 @@
             <br />
             <br />
             <br />
-            <button type="button" class="btn btn-info" onclick="onClick('#dateinput')">Calculate price</button>
+            <button type="button" class="btn btn-info"onclick="calculatePay('#dateinput')">Calculate price</button>
 
             <div id="result"></div>
 
@@ -52,3 +54,42 @@
         </div>
     </form>
 </div>
+
+
+<script>
+
+    $(document).ready(function () {
+        let disabledDates = [];
+        @foreach (var item in Model)
+        {
+            @:disabledDates.push(new Date('@item.ToString("yyyy-MM-dd")'));
+        };
+        $('#dateinput').multiDatesPicker({
+            minDate: 0,
+            maxDate: 365,
+            //dateFormat: "yyyy-mm-dd",
+            altField: '#dateinput',
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            addDisabledDates: disabledDates,
+        });
+    });
+    
+            
+    function calculatePay(elem) {
+        var $this = $(elem);
+        var val = $this.val();
+        if (val == '') {
+            alert('please select a date');
+        } else {
+            var values = $this.val().split(',');
+            var count = 0;
+            for (var a = 0; a < values.length; a++) {
+                count++;
+            }
+        }
+        document.getElementById("result").innerHTML = "Total price :$" + count * 5;
+    }
+
+
+</script>

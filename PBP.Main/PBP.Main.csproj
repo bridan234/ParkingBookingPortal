@@ -7,7 +7,6 @@
   <ItemGroup>
     <Content Remove="wwwroot\css\Stylesheet.css" />
     <Content Remove="wwwroot\Images\QualityInn.webp" />
-    <Content Remove="wwwroot\jqueryUI\AUTHORS.txt" />
     <Content Remove="wwwroot\jqueryUI\external\jquery\jquery.js" />
     <Content Remove="wwwroot\jqueryUI\images\ui-icons_444444_256x240.png" />
     <Content Remove="wwwroot\jqueryUI\images\ui-icons_555555_256x240.png" />
@@ -15,7 +14,6 @@
     <Content Remove="wwwroot\jqueryUI\images\ui-icons_777777_256x240.png" />
     <Content Remove="wwwroot\jqueryUI\images\ui-icons_cc0000_256x240.png" />
     <Content Remove="wwwroot\jqueryUI\images\ui-icons_ffffff_256x240.png" />
-    <Content Remove="wwwroot\jqueryUI\index.html" />
     <Content Remove="wwwroot\jqueryUI\jquery-ui.css" />
     <Content Remove="wwwroot\jqueryUI\jquery-ui.js" />
     <Content Remove="wwwroot\jqueryUI\jquery-ui.min.css" />
@@ -40,7 +38,6 @@
   <ItemGroup>
     <None Include="wwwroot\css\Stylesheet.css" />
     <None Include="wwwroot\Images\QualityInn.webp" />
-    <None Include="wwwroot\jqueryUI\AUTHORS.txt" />
     <None Include="wwwroot\jqueryUI\external\jquery\jquery.js" />
     <None Include="wwwroot\jqueryUI\images\ui-icons_444444_256x240.png" />
     <None Include="wwwroot\jqueryUI\images\ui-icons_555555_256x240.png" />
@@ -48,7 +45,6 @@
     <None Include="wwwroot\jqueryUI\images\ui-icons_777777_256x240.png" />
     <None Include="wwwroot\jqueryUI\images\ui-icons_cc0000_256x240.png" />
     <None Include="wwwroot\jqueryUI\images\ui-icons_ffffff_256x240.png" />
-    <None Include="wwwroot\jqueryUI\index.html" />
     <None Include="wwwroot\jqueryUI\jquery-ui.css" />
     <None Include="wwwroot\jqueryUI\jquery-ui.js" />
     <None Include="wwwroot\jqueryUI\jquery-ui.min.css" />
@@ -76,6 +72,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PBP.BusinessLogic\PBP.BusinessLogic.csproj" />
+    <ProjectReference Include="..\PBP.DataAccess\PBP.DataAccess.csproj" />
   </ItemGroup>
 
 

@@ -5,12 +5,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PBP.DataAccess;
 using PBP.Main.Models;
+using PBP.Pocos;
 
 namespace PBP.Main.Controllers
 {
     public class HomeController : Controller
     {
+        private DBModel db = new DBModel();
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -20,7 +23,10 @@ namespace PBP.Main.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            IDataRepository<CalendarPoco> repo = new DataRepository<CalendarPoco>();
+            IList<DateTime> UnAvailableDates = repo.GetList(days => days.AvailableSlots <= 0).Select(d => d.Date).ToList();
+            
+            return View(UnAvailableDates);
         }
 
         public IActionResult Privacy()
