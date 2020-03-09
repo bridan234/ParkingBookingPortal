@@ -16,7 +16,8 @@ namespace PBP.Pocos
         [Column("Amount_Paid")]
         public decimal AmountPaid { get; set; }
         public string Details { get; set; }
-        
+        public string MerchantId { get; set; }
+
         public ReservationPoco Reservation { get; set; }
     }
 }

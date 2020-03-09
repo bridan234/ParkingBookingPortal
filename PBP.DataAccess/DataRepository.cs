@@ -23,27 +23,24 @@ namespace PBP.DataAccess
             db.SaveChanges();
         }
 
-        public TPoco Get(Expression<Func<TPoco, bool>> Condition, Expression<Func<TPoco, object>> navigationProperty = null)
+        public TPoco Get(Expression<Func<TPoco, bool>> Condition)
         {
             var dbQuery = db.Set<TPoco>();
-            if (navigationProperty == null)
-                return dbQuery.Where(Condition).FirstOrDefault();
-            
-            return dbQuery.Where(Condition).Include(navigationProperty).FirstOrDefault();
+            return dbQuery.Where(Condition).FirstOrDefault();
 
         }
 
-        public IList<TPoco> GetList(Expression<Func<TPoco, bool>> Condition, Expression<Func<TPoco, object>> navigationProperty = null)
+        public IList<TPoco> GetList(Expression<Func<TPoco, bool>> Condition)
         {
             var dbQuery = db.Set<TPoco>();
-            if (navigationProperty == null)
-                return dbQuery.Where(Condition).ToList();
-
-            return dbQuery.Where(Condition).Include(navigationProperty).ToList();
+            //dbQuery = db
+            return dbQuery.Where(Condition).ToList();
         }
 
-        public void Remove(TPoco poco)
+        public void Remove(Guid Id)
         {
+            db.Set<TPoco>();
+            var poco = db.Find<TPoco>(Id);
             db.Entry(poco).State = EntityState.Deleted;
             db.SaveChanges();
         }

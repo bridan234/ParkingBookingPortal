@@ -2,15 +2,16 @@
 @{
     ViewData["Title"] = "Quality Inn (Cincinnati airport) parking booking portal";
 }
-@*<script lang="text/JavaScript" src="~/js/DatePickerScript.js"></script>*@
-
+@*<script lang="text/JavaScript" src="~/js/IndexScript.js"></script>*@
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/hot-sneaks/jquery-ui.css" />
 <div class="form-area">
     <h3 style="color: white;">Booking Details</h3>
+
     <form action="post">
 
         <div class="calender-area">
             <h3 style="color: white;">Select Dates</h3>
-            <input type="text" name="" id="dateinput" placeholder="Select Date" autocomplete="off" required />
+            <input type="text" name="" id="dateinput" placeholder="Select Date" onclick="_refresh" autocomplete="off" required />
             <br />
             <br />
             <br />
@@ -55,15 +56,13 @@
     </form>
 </div>
 
-
 <script>
-
     $(document).ready(function () {
         let disabledDates = [];
-        @foreach (var item in Model)
-        {
+        @foreach (var item in Model){
             @:disabledDates.push(new Date('@item.ToString("yyyy-MM-dd")'));
         };
+        
         $('#dateinput').multiDatesPicker({
             minDate: 0,
             maxDate: 365,
@@ -72,10 +71,11 @@
             showOtherMonths: true,
             selectOtherMonths: true,
             addDisabledDates: disabledDates,
+            
+            //addDates : dts,
         });
     });
-    
-            
+
     function calculatePay(elem) {
         var $this = $(elem);
         var val = $this.val();
@@ -88,8 +88,20 @@
                 count++;
             }
         }
-        document.getElementById("result").innerHTML = "Total price :$" + count * 5;
+        document.getElementById("result").innerHTML = "Total price: $" + count * 5;
+        console.log($('#dateinput').values())
     }
 
+    //function _refresh() {
+    //    //let valus = $("dateinout").values();
+    //    let dts;
+    //    $('#dateinput').multiDatesPicker({
+    //        //dts = $('#dateinput').multiDatesPicker('value'),
+    //        dts = $('#dateinput').multiDatesPicker('value'),
+    //        resetDates: enabled,
+    //        //addDates : dts,
+    //        //addDates: $('#dateinput').multiDatesPicker('value')
+    //    });
+    //}
 
 </script>

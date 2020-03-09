@@ -9,10 +9,10 @@ namespace PBP.DataAccess
     public interface IDataRepository<TPoco> 
     {
         void Add(TPoco poco);
-        void Remove(TPoco poco);
+        void Remove(Guid Id);
         void Update(TPoco poco); 
-        TPoco Get(Expression<Func<TPoco, bool>> Condition, Expression<Func<TPoco, object>> navigationProperty = null);
-        IList<TPoco> GetList(Expression<Func<TPoco, bool>> Condition, Expression<Func<TPoco, object>> navigationProperty = null);
+        TPoco Get(Expression<Func<TPoco, bool>> Condition);
+        IList<TPoco> GetList(Expression<Func<TPoco, bool>> Condition);
 
     }
 }
