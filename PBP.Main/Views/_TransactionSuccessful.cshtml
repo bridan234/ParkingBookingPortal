@@ -1,0 +1,25 @@
+﻿@model PBP.Main.View_Models.ReceiptVM
+
+<h2>Payment Successful</h2>
+<hr />
+<div>
+    <h4>Hello @Model.FullName,</h4>
+    <p>
+        Thank you for your reservation. This is a confirmation to your reservation.
+        You can <a href="javascript: window.print()">Print</a> this page
+    </p>
+    <p><b><em>Note: </em></b>You must present your reservation number to the staff before parking your vehicle.</p>
+    <br />
+    <br />
+    <div>
+        <h5>Reservation Details:</h5>
+        <br />
+        -------------------------------------------------------------------------------------------------------------
+        <p>Reservation Number: <strong>@Model.ReservationId</strong></p>
+        <p>Dates(s) Reserved: @Model.ReservedDates</p>
+        <p>Car Plate #: @Model.CarPlateNumber</p>
+        <p>Total Paid: @Model.AmountPaid</p>
+        -------------------------------------------------------------------------------------------------------------
+        <p>Stripe Merchant reference#: @Model.MerchantId</p>
+    </div>
+</div>

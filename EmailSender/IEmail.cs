@@ -16,9 +16,12 @@ namespace EmailSender
         [Required, Display(Name = "Email Subject"), DataType(DataType.Text)]
         public string Subject { get; set; }
 
-        [Required, Display(Name = "Message"), DataType(DataType.MultilineText)]
-        public string Message { get; set; }
+        [Display(Name = "Message Body"), DataType(DataType.MultilineText)]
+        public string MessageBody { get; set; }
 
-        
+        [Required, Display(Name = "Body HTML"), DataType(DataType.Text)]
+        public string BodyHtml { get; set; }
+
+
     }
 }

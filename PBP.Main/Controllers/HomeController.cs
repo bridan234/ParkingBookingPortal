@@ -6,29 +6,37 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using EmailSender;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using MimeKit;
 using PBP.BusinessLogic;
 using PBP.DataAccess;
 using PBP.Main.Models;
+using PBP.Main.View_Models;
 using PBP.Pocos;
+using Rotativa.AspNetCore;
 using Stripe;
 
 namespace PBP.Main.Controllers
 {
     public class HomeController : Controller
     {
-        private DBModel db;
+        //private DBModel db;
         private readonly IConfiguration _config;
         private readonly ILogger<HomeController> _logger;
+        private readonly IWebHostEnvironment _env;
 
-        public HomeController(ILogger<HomeController> logger, IConfiguration config)
+        public HomeController(ILogger<HomeController> logger, IConfiguration config, IWebHostEnvironment env)
         {
+            _env = env;
             _config = config;
             _logger = logger;
-            db = new DBModel();
+            //db = new DBModel();
         }
 
         public IActionResult Index()
@@ -39,8 +47,9 @@ namespace PBP.Main.Controllers
             return View(UnAvailableDates);
         }
 
-        public IActionResult Payment(
-              string dateReserved
+        [HttpPost]
+        public async Task<IActionResult> IndexAsync(
+              string datesReserved
             , string carPlateNumber
             , string email
             , string fullName
@@ -48,63 +57,150 @@ namespace PBP.Main.Controllers
             , DateTime transactionDate
             , int numberOfDaysReserved
             , decimal amountPaid)
-        { 
+        {
             var charge = new Charge();
             // Check to see that Payment was successful
             if (charge.StripeResponse.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 #region Creating a Reservation and Transaction Objects before saving
-                var Reservation = new ReservationPoco() 
-                { Id=Guid.NewGuid()
-                    , CarPlateNumber= carPlateNumber
-                    , FullName= fullName
-                    , Email=email
-                    , Phone=phone
-                    , Date=DateTime.Now
-                    , DatesReserved=dateReserved
-                    , NumberOfDaysReserved=numberOfDaysReserved
+                var Reservation = new ReservationPoco()
+                {
+                    Id = Guid.NewGuid()
+                    ,
+                    CarPlateNumber = carPlateNumber
+                    ,
+                    FullName = fullName
+                    ,
+                    Email = email
+                    ,
+                    Phone = phone
+                    ,
+                    Date = DateTime.Now
+                    ,
+                    DatesReserved = datesReserved
+                    ,
+                    NumberOfDaysReserved = numberOfDaysReserved
                 };
 
-                var Transaction = new TransactionPoco() 
-                { Id = Guid.NewGuid()
-                    , AmountPaid = amountPaid
-                    , ReservationId = Reservation.Id
-                    , Details = charge.StripeResponse.Content
-                    , MerchantId = charge.Id
-                    , Reservation=Reservation 
+                var Transaction = new TransactionPoco()
+                {
+                    Id = Guid.NewGuid()
+                    ,
+                    AmountPaid = amountPaid
+                    ,
+                    ReservationId = Reservation.Id
+                    ,
+                    Details = charge.StripeResponse.Content
+                    ,
+                    MerchantId = charge.Id
+                    ,
+                    Reservation = Reservation
                 };
                 #endregion
 
                 // Save/Update all Information into Database
-                saveToDatabase(Transaction, Reservation, splitDates(dateReserved));
+                //Parallel.Invoke( () => { saveToDatabase(Transaction, Reservation, splitDates(dateReserved)); });
 
-                //Generate Receipt PDF
-
-
-                //Generate Reservation Receipt
-                var receipt = new object [] {fullName, 
+                //Generate Receipt View Model
+                var receipt = new ReceiptVM (fullName,
                     Reservation.Id,
-                    Reservation.DatesReserved, 
-                    Reservation.CarPlateNumber, 
-                    Transaction.AmountPaid, 
-                    Transaction.MerchantId 
-                };
+                    Reservation.DatesReserved,
+                    Reservation.CarPlateNumber,
+                    Transaction.AmountPaid,
+                    Transaction.MerchantId
+                );
 
-                //MailSender.SendMail(new EMail() { ToAddress = email }, ViewAsPdf(receipt));
+                //Generate Receipt HTML string
+                var ReceiptHtmlString =  getStringAsync("~/Views/_TransactionSuccessful.cshtml", receipt);
 
-                RedirectToAction("TransactionSuccessful", receipt);
-                //return View();
+                //Convert HTML string to PDF Page
+                var pdfFile = WkhtmltopdfDriver.ConvertHtml(_env.WebRootPath + @"\Rotativa", "-q", await ReceiptHtmlString);
+                ViewBag.File = File( pdfFile,"application/pdf","Booking.pdf");
+
+                
+                Parallel.Invoke(
+                    // Save/Update all Information into Database
+                    () => saveToDatabase(Transaction, Reservation, splitDates(datesReserved)),
+
+                    //Send Email to client attaching the PDF as receipt
+                    () => {
+                                            MailSender.SendMail(new EMail()
+                                            {
+                                                ToAddress = email,
+                                                FromAddress = "Parking Booking Portal",
+                                                BodyHtml = ReceiptHtmlString,
+                                                MessageBody = "",
+                                                Subject = "Booking Confirmation/Receipt",
+                                            }, 
+                                            new MemoryStream(pdfFile));
+                                        }
+                );
+
+                Task.WaitAll();
+                //Display Success page
+                return RedirectToAction(nameof(TransactionSuccessful), receipt);
+
             }
-
             // If Payment wasn't successful
-            ViewBag.ErrorMessage = "Payment was unssucessful, Please try again with another card or contact your Bank ";
-            return View();
+            return View("Payment was unssucessful, Please try again with another card or contact your Bank ");
+           
+        }
+
+        private async Task<string> getStringAsync(string ViewPath, ReceiptVM model)
+        {
+            //string result = await this.RenderViewToStringAsync(ViewPath, model);
+            
+            return await RenderViewToStringAsync(this,ViewPath, model);
+        }
+
+        private async Task<string> RenderViewToStringAsync<TModel>(Controller controller, string viewNamePath, TModel model)
+        {
+            if (string.IsNullOrEmpty(viewNamePath))
+                viewNamePath = controller.ControllerContext.ActionDescriptor.ActionName;
+
+            controller.ViewData.Model = model;
+
+            using (StringWriter writer = new StringWriter())
+            {
+                try
+                {
+                    IViewEngine viewEngine = controller.HttpContext.RequestServices.GetService(typeof(ICompositeViewEngine)) as ICompositeViewEngine;
+
+                    ViewEngineResult viewResult = null;
+
+                    if (viewNamePath.EndsWith(".cshtml"))
+                        viewResult = viewEngine.GetView(viewNamePath, viewNamePath, false);
+                    else
+                        viewResult = viewEngine.FindView(controller.ControllerContext, viewNamePath, false);
+
+                    if (!viewResult.Success)
+                        return $"A view with the name '{viewNamePath}' could not be found";
+
+                    ViewContext viewContext = new ViewContext(
+                        controller.ControllerContext,
+                        viewResult.View,
+                        controller.ViewData,
+                        controller.TempData,
+                        writer,
+                        new HtmlHelperOptions()
+                    );
+
+                    await viewResult.View.RenderAsync(viewContext);
+
+                    return writer.GetStringBuilder().ToString();
+                }
+                catch (Exception exc)
+                {
+                    return $"Failed - {exc.Message}";
+                }
+            }
         }
 
         public IActionResult TransactionSuccessful(object [] receipt)
         {
             return View(receipt.ToList());
         }
+    
 
         //This method splits/seperates the dates and returns an array of dates
         private DateTime[] splitDates(string dateReserved)
@@ -131,7 +227,8 @@ namespace PBP.Main.Controllers
                 {
                      dateRecord = new CalendarPoco() { Id = Guid.NewGuid()
                         , AvailableSlots = _config.GetValue<int>("Calendar:Slots") - 1
-                        , ReservedSlots = 1, TotalSlots = _config.GetValue<int>("Calendar:Slots")
+                        , ReservedSlots = 1
+                        , TotalSlots = _config.GetValue<int>("Calendar:Slots")
                         , Date = Dates[i] };
                     logic.Add(dateRecord);
                 }
@@ -158,7 +255,7 @@ namespace PBP.Main.Controllers
                 logic.Add(transaction);
             }
             #endregion //End Saving to the Transactions Table
-
+           
         }
 
         public IActionResult Privacy()

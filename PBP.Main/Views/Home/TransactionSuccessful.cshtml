@@ -1,27 +1,13 @@
-﻿@model List<object>
+﻿@model PBP.Main.View_Models.ReceiptVM
 @{
     ViewData["Title"] = "Booking Confirmation - PBP";
 }
 
-<h2>Payment Successful</h2>
-<hr />
+    <div style="float:right; position: inherit; right: 0px; top: 0px">
 
+        <a class="btn" href="javascript: window.print()"><img src="~/Images/print-icon.png" style="width:30px" alt="Print" /></a>
+       
+        <a class="btn" href="#" target="_blank"><img src="~/Images/pdf download.png" alt="Download" style="width:50px" /></a>
 
-
-<h4>Hello Model[0],</h4>
-<p>
-    Thank you for your reservation. This is a confirmation to your reservation.
-    you can <a href="javascript: window.print()">click here to print</a> this page
-</p>
-<p><b>Note:</b> You must present your reservation number to the staff before parking your vehicle.</p>
-<br />
-<br />
-<h5>Reservation Details:</h5>
-<br />
--------------------------------------------------------------------------------------------------------------
-<p>Reservation Number: Model[1]</p>
-<p>Dates(s) Reserved: Model[2]</p>
-<p>Car Plate #: Model[3]</p>
-<p>Total Paid: Model[4]</p>
--------------------------------------------------------------------------------------------------------------
-<p>Stripe Merchant reference#: Model[5]</p>
+    </div>
+@await Html.PartialAsync("~/Views/_TransactionSuccessful.cshtml", Model);

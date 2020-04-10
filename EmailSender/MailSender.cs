@@ -9,20 +9,22 @@ namespace EmailSender
 {
     public static class MailSender
     {
-        public static void SendMail(IEmail email, Stream Attachment )
+        public static void SendMail(IEmail email, Stream AttachmentStream )
         {
             MimeMessage msg = new MimeMessage();
             MailboxAddress from = new MailboxAddress("Admin", email.FromAddress);
             MailboxAddress To = new MailboxAddress("User", email.ToAddress);
+
             msg.Subject = email.Subject;
             msg.From.Add(from);
             msg.To.Add(To);
 
             BodyBuilder body = new BodyBuilder();
-            body.TextBody = email.Message;
+            body.TextBody = email.MessageBody;
 
-            body.Attachments.Add("Booking Confirmation", Attachment);
-
+            body.Attachments.Add("Booking Confirmation", AttachmentStream);
+            body.HtmlBody = email.BodyHtml;
+            
             msg.Body = body.ToMessageBody();
 
             SmtpClient client = new SmtpClient();
@@ -34,5 +36,7 @@ namespace EmailSender
             client.Dispose();
 
         }
+
+
     }
 }

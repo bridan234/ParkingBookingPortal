@@ -64,10 +64,13 @@
     <None Include="wwwroot\Multiple-Dates-Picker-for-jQuery-UI-latest\mdp-icon.png" />
     <None Include="wwwroot\Multiple-Dates-Picker-for-jQuery-UI-latest\package.json" />
     <None Include="wwwroot\Multiple-Dates-Picker-for-jQuery-UI-latest\README.md" />
+    <None Include="wwwroot\Rotativa\wkhtmltoimage.exe" />
+    <None Include="wwwroot\Rotativa\wkhtmltopdf.exe" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="Rotativa.AspNetCore" Version="1.1.1" />
     <PackageReference Include="stripe.net" Version="35.3.0" />
   </ItemGroup>
 
