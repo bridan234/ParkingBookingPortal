@@ -111,11 +111,11 @@ namespace PBP.Main.Controllers
                 );
 
                 //Generate Receipt HTML string
-                var ReceiptHtmlString =  getStringAsync("~/Views/_TransactionSuccessful.cshtml", receipt);
+                var ReceiptHtmlString =  await getStringAsync("~/Views/_TransactionSuccessful.cshtml", receipt);
 
                 //Convert HTML string to PDF Page
-                var pdfFile = WkhtmltopdfDriver.ConvertHtml(_env.WebRootPath + @"\Rotativa", "-q", await ReceiptHtmlString);
-                ViewBag.File = File( pdfFile,"application/pdf","Booking.pdf");
+                var pdfFile = WkhtmltopdfDriver.ConvertHtml(_env.WebRootPath + @"\Rotativa", "-q",  ReceiptHtmlString);
+                ViewBag.File = File( pdfFile,"application/pdf","Booking Confirmation.pdf");
 
                 
                 Parallel.Invoke(
@@ -196,9 +196,9 @@ namespace PBP.Main.Controllers
             }
         }
 
-        public IActionResult TransactionSuccessful(object [] receipt)
+        public IActionResult TransactionSuccessful(ReceiptVM receipt)
         {
-            return View(receipt.ToList());
+            return View(receipt);
         }
     
 

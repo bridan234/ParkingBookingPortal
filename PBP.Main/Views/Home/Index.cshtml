@@ -1,17 +1,17 @@
 ﻿@model ICollection<DateTime>
 @{
-    ViewData["Title"] = "Quality Inn (Cincinnati airport) parking booking portal";
+    ViewData["Title"] = "Parking booking portal";
 }
-@*<script lang="text/JavaScript" src="~/js/IndexScript.js"></script>*@
+
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/hot-sneaks/jquery-ui.css" />
 <div class="form-area">
     <h3 style="color: white;">Booking Details</h3>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <form action="Index" method="post" id="payment-form">
 
-    <form asp-controller="Home" asp-action="Index" method="post">
-        
         <div class="calender-area">
             <h3 style="color: white;">Select Dates</h3>
-            <input type="text" name="datesReserved" id="dateinput" placeholder="Select Date" onclick="_refresh" autocomplete="off" required />
+            <input type="text" name="datesReserved" id="dateinput" placeholder="Select Date" autocomplete="off" required />
             <br />
             <br />
             <br />
@@ -25,7 +25,8 @@
             <br />
             <br />
             <br />
-            <button type="button" class="btn btn-info"onclick="calculatePay('#dateinput')">Calculate price</button>
+            <br />
+            <button type="button" class="btn btn-info" onclick="calculatePay('#dateinput')">Calculate price</button>
 
             <div id="result"></div>
 
@@ -51,62 +52,43 @@
             <br />
             <br />
             <br />
-            <input type="hidden" id="amountPaid" name="amountPaid" value="javascript: calculatePay('#dateinput')" />
-            <input type="hidden" id="numberOfDaysReserved" name="numberOfDaysReserved" value="javascript: calculatePay('#dateinput') / 5" />
-            <input type="submit" value="pay" class="btn btn-success btn-lg btn-block" />
+            <br />
+
+
         </div>
+
+        <div class="form-row">
+            <label for="card-element">
+                Credit or debit card
+            </label>
+            <div id="card-element">
+                <!-- A Stripe Element will be inserted here. -->
+            </div>
+
+            <!-- Used to display form errors. -->
+            <div id="card-errors" role="alert"></div>
+
+            <input type="submit" value="Pay" class="btn btn-success btn-lg btn-block" />
+        </div>
+
     </form>
+
 </div>
 
-<script>
-    $(document).ready(function () {
-        let disabledDates = [];
-        @foreach (var item in Model){
-            @:disabledDates.push(new Date('@item.ToString("yyyy-MM-dd")'));
-        };
-        
-        $('#dateinput').multiDatesPicker({
-            minDate: 0,
-            maxDate: 365,
-            //dateFormat: "yyyy-mm-dd",
-            altField: '#dateinput',
-            showOtherMonths: true,
-            selectOtherMonths: true,
-            addDisabledDates: disabledDates,
-            
-            //addDates : dts,
+@section Scripts{
+    <script src="https://js.stripe.com/v3/"></script>
+    <script lang="text/JavaScript" src="~/js/IndexScript.js"></script>
+    <script>
+
+        console.log("Hi");
+        $(document).ready(function () {
+            let disabledDates = [];
+            @foreach(var item in Model){
+                @: disabledDates.push(new Date('@item.ToString("yyyy-MM-dd")'));
+            };
+
+            DisableDates(disabledDates);
         });
-    });
 
-    function calculatePay(elem) {
-        var $this = $(elem);
-        var val = $this.val();
-        if (val == '') {
-            alert('please select a date');
-        } else {
-            var values = $this.val().split(',');
-            var count = 0;
-            for (var a = 0; a < values.length; a++) {
-                count++;
-            }
-        }
-        document.getElementById("result").innerHTML = "Total price: $" + count * 5;
-        $("numberOfDaysReserved").val(count);
-        $("amountPaid").val(count * 5);
-        console.log($('#dateinput').val())
-
-    }
-
-    //function _refresh() {
-    //    //let valus = $("dateinout").values();
-    //    let dts;
-    //    $('#dateinput').multiDatesPicker({
-    //        //dts = $('#dateinput').multiDatesPicker('value'),
-    //        dts = $('#dateinput').multiDatesPicker('value'),
-    //        resetDates: enabled,
-    //        //addDates : dts,
-    //        //addDates: $('#dateinput').multiDatesPicker('value')
-    //    });
-    //}
-
-</script>
+    </script>
+}
